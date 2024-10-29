@@ -1,0 +1,113 @@
+:root {
+    --cyan: hsl(180, 62%, 55%);
+    --red: hsl(0, 78%, 62%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+}
+
+body {
+    font-size: 0.9375rem;
+    font-family: 'poppins';
+}
+
+p {
+    color: hsl(229, 6%, 66%);
+}
+
+.card {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: hsl(0, 0%, 98%);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px;
+}
+
+.icon-card {
+float: right;
+}
+
+.supervisor {
+border-top: 5px solid var(--cyan);
+}
+
+.team-builder {
+border-top: 5px solid var(--red);
+}
+
+.karma {
+border-top: 5px solid var(--orange);
+}
+
+.calculator {
+border-top: 5px solid var(--blue);
+}
+
+.information {
+text-align: center;
+}
+
+.information h1 {
+margin-bottom: 0;
+font-weight: 200;
+}
+
+@media (max-width:375px) {
+    .card-feature {
+       padding: 10px;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width:375px) {
+    .card-feature {
+        width: 100%;
+        display: grid;
+        padding: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto 1fr auto;
+
+        grid-template-areas: 
+            "header header header "
+            ".  team-builder  ."
+            "supervisor  team-builder  calculator"
+            "supervisor karma calculator"
+           ". karma .";
+    }
+
+    /* Area grid untuk elemen tertentu */
+    .information {
+        grid-area: header;
+    }
+
+    .supervisor {
+        bottom: 40px;
+        grid-area: supervisor;
+    }
+
+    .team-builder {
+        grid-area: team-builder;
+    }
+
+    .calculator {
+        grid-area: calculator;
+    }
+
+    .karma {
+        grid-area: karma;
+    }
+}
+
+
+
+
+
+
+
+
+
